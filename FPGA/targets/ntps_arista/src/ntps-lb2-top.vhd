@@ -69,8 +69,9 @@ entity top is
     gpio_tri         : out   std_logic_vector(NUM_GPIO_C-1 downto 0) := (others => '1');
     sysmon_alm       : in    std_logic_vector(15 downto 0);
     fpga_id          : in    std_logic_vector(2 downto 0);
+    fpga_dna         : in    std_logic_vector(95 downto 0) := (others => '0'); -- FIXME: Deprecated in FDK v2.2
 
-    bitstream_id     : in    std_logic_vector(31 downto 0) := (others => '0');
+    bitstream_id     : in    std_logic_vector(31 downto 0) := (others => '0'); -- Added in FDK v2.2
 
     mac_addr         : in    slv48_array_t(NUM_GT_PORTS_C downto 1);
 
