@@ -87,7 +87,11 @@ entity top is
     ddr4_data_strobe : inout ddr4_inout_array_t(NUM_DIMMS_C-1 downto 0);
     ddr4_ctrl        : out   ddr4_host2mem_array_t(NUM_DIMMS_C-1 downto 0);
 
-    crc_error        : out   std_logic := '0'
+    crc_error        : out   std_logic := '0';
+
+    -- Signals below are reserved and subject to change.
+    reserved_in      : in    top_reserved_in_t;
+    reserved_out     : out   top_reserved_out_t := TOP_RESERVED_OUT_DFLT_C
     );
 end entity top;
 
